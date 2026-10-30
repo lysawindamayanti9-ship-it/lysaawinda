@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supplier - Crumbelle Cookies</title>
+
+    <style>
+        /* PENGATURAN DASAR */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #FFF7E8;
+            color: #513B2E;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            background: #FFFCF5;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(81, 59, 46, 0.08);
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #513B2E;
+            font-size: 30px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            color: #8A6A50;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .header-line {
+            width: 75px;
+            height: 3px;
+            background: #A87950;
+            margin: 15px auto;
+            border-radius: 10px;
+        }
+
+        /* INFORMASI SUPPLIER */
+        .supplier-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: #F5E8D0;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #E5D0AB;
+        }
+
+        .info-card h3 {
+            font-size: 25px;
+            color: #A87950;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            font-size: 13px;
+            color: #6B5140;
+        }
+
+        /* JUDUL TABEL */
+        .table-title {
+            margin-bottom: 18px;
+        }
+
+        .table-title h2 {
+            font-size: 22px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .table-title p {
+            font-size: 13px;
+            color: #8A6A50;
+            line-height: 1.7;
+        }
+
+        /* TABEL */
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13px;
+            min-width: 850px;
+        }
+
+        th {
+            background: #513B2E;
+            color: #FFF7E8;
+            padding: 15px 12px;
+            font-weight: normal;
+        }
+
+        td {
+            padding: 15px 12px;
+            border-bottom: 1px solid #E5D0AB;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #F9F0E0;
+        }
+
+        tbody tr:hover {
+            background: #F0DFC2;
+        }
+
+        /* BADGE KATEGORI */
+        .badge {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .badge-tepung {
+            background: #F1D9A9;
+            color: #79552C;
+        }
+
+        .badge-cokelat {
+            background: #E8C6B0;
+            color: #75452F;
+        }
+
+        .badge-dairy {
+            background: #E9E3C5;
+            color: #6D653B;
+        }
+
+        .badge-gula {
+            background: #E8D9EC;
+            color: #76557D;
+        }
+
+        .badge-kemasan {
+            background: #D9E5D0;
+            color: #526B48;
+        }
+
+        /* STATUS */
+        .status {
+            color: #668253;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        /* TOMBOL */
+        .btn-chat {
+            display: inline-block;
+            background: #6B8060;
+            color: white;
+            padding: 8px 13px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 12px;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+
+        .btn-chat:hover {
+            background: #4F6346;
+        }
+
+        /* CATATAN */
+        .note {
+            margin-top: 25px;
+            padding: 20px;
+            background: #F5E8D0;
+            border-left: 5px solid #A87950;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .note h3 {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .note p {
+            font-size: 13px;
+            color: #6B5140;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            background: #513B2E;
+            color: #FFF7E8;
+            padding: 22px;
+            border-radius: 10px;
+            line-height: 1.8;
+        }
+
+        footer p {
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 700px) {
+            .supplier-info {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .header h1 {
+                font-size: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>♡ Our Trusted Suppliers ♡</h1>
+        <div class="header-line"></div>
+        <p>
+            Daftar mitra pemasok bahan baku dan perlengkapan
+            <br>
+            yang mendukung kualitas Crumbelle Cookies.
+        </p>
+    </div>
+
+    <!-- INFORMASI SUPPLIER -->
+    <div class="supplier-info">
+
+        <div class="info-card">
+            <h3>05</h3>
+            <p>Total Supplier</p>
+        </div>
+
+        <div class="info-card">
+            <h3>05</h3>
+            <p>Kategori Bahan</p>
+        </div>
+
+        <div class="info-card">
+            <h3>♡</h3>
+            <p>Mitra Kerja Sama</p>
+        </div>
+
+    </div>
+
+    <!-- JUDUL TABEL -->
+    <div class="table-title">
+        <h2>📦 Data Supplier Crumbelle</h2>
+        <p>
+            Informasi pemasok bahan baku dan perlengkapan
+            untuk proses produksi cookies.
+        </p>
+    </div>
+
+    <!-- TABEL SUPPLIER -->
+    <div class="table-responsive">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID Supplier</th>
+                    <th>Nama Supplier</th>
+                    <th>Kategori</th>
+                    <th>Produk</th>
+                    <th>Lokasi</th>
+                    <th>Kontak</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <!-- SUPPLIER 1 -->
+                <tr>
+                    <td><strong>CRB-001</strong></td>
+                    <td>Prima Flour Supply</td>
+                    <td>
+                        <span class="badge badge-tepung">
+                            Bahan Tepung
+                        </span>
+                    </td>
+                    <td>Tepung Terigu</td>
+                    <td>Bandung</td>
+                    <td>08XX-XXXX-XXXX</td>
+                    <td><span class="status">Aktif</span></td>
+                    <td>
+                        <a href="https://wa.me/628XXXXXXXXXX"
+                           target="_blank" class="btn-chat">
+                            Hubungi
+                        </a>
+                    </td>
+                </tr>
+
+                <!-- SUPPLIER 2 -->
+                <tr>
+                    <td><strong>CRB-002</strong></td>
+                    <td>Sweet Cocoa Indonesia</td>
+                    <td>
+                        <span class="badge badge-cokelat">
+                            Cokelat
+                        </span>
+                    </td>
+                    <td>Chocolate Chips & Cocoa</td>
+                    <td>Jakarta</td>
+                    <td>08XX-XXXX-XXXX</td>
+                    <td><span class="status">Aktif</span></td>
+                    <td>
+                        <a href="https://wa.me/628XXXXXXXXXX"
+                           target="_blank" class="btn-chat">
+                            Hubungi
+                        </a>
+                    </td>
+                </tr>
+
+                <!-- SUPPLIER 3 -->
+                <tr>
+                    <td><strong>CRB-003</strong></td>
+                    <td>Golden Dairy Supply</td>
+                    <td>
+                        <span class="badge badge-dairy">
+                            Produk Dairy
+                        </span>
+                    </td>
+                    <td>Butter & Susu</td>
+                    <td>Bandung</td>
+                    <td>08XX-XXXX-XXXX</td>
+                    <td><span class="status">Aktif</span></td>
+                    <td>
+                        <a href="https://wa.me/628XXXXXXXXXX"
+                           target="_blank" class="btn-chat">
+                            Hubungi
+                        </a>
+                    </td>
+                </tr>
+
+                <!-- SUPPLIER 4 -->
+                <tr>
+                    <td><strong>CRB-004</strong></td>
+                    <td>Sweet Sugar Market</td>
+                    <td>
+                        <span class="badge badge-gula">
+                            Pemanis
+                        </span>
+                    </td>
+                    <td>Gula Pasir & Brown Sugar</td>
+                    <td>Surabaya</td>
+                    <td>08XX-XXXX-XXXX</td>
+                    <td><span class="status">Aktif</span></td>
+                    <td>
+                        <a href="https://wa.me/628XXXXXXXXXX"
+                           target="_blank" class="btn-chat">
+                            Hubungi
+                        </a>
+                    </td>
+                </tr>
+
+                <!-- SUPPLIER 5 -->
+                <tr>
+                    <td><strong>CRB-005</strong></td>
+                    <td>Pretty Pack Indonesia</td>
+                    <td>
+                        <span class="badge badge-kemasan">
+                            Kemasan
+                        </span>
+                    </td>
+                    <td>Box Cookies & Packaging</td>
+                    <td>Bandung</td>
+                    <td>08XX-XXXX-XXXX</td>
+                    <td><span class="status">Aktif</span></td>
+                    <td>
+                        <a href="https://wa.me/628XXXXXXXXXX"
+                           target="_blank" class="btn-chat">
+                            Hubungi
+                        </a>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- CATATAN -->
+    <div class="note">
+        <h3>♡ Supplier Partnership</h3>
+        <p>
+            Crumbelle Cookies bekerja sama dengan berbagai
+            pemasok untuk menyediakan bahan baku dan kemasan
+            berkualitas. Kerja sama ini dilakukan untuk menjaga
+            kualitas produk dan kelancaran proses produksi.
+        </p>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <h3>♡ Crumbelle Cookies ♡</h3>
+    <p>Freshly Baked, Made with Love.</p>
+    <p>© 2026 Crumbelle Cookies. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

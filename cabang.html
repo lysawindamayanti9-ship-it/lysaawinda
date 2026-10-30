@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Cabang - Crumbelle Cookies</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #FFF7E8;
+            color: #513B2E;
+            padding: 30px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: normal;
+            color: #513B2E;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            color: #8A6A50;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .header-line {
+            width: 80px;
+            height: 3px;
+            background: #A87950;
+            margin: 18px auto;
+            border-radius: 10px;
+        }
+
+        /* INFORMASI */
+        .intro {
+            background: #EEDDBD;
+            padding: 22px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        /* GRID CABANG */
+        .branch-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        /* KARTU CABANG */
+        .branch-card {
+            background: #FFFCF5;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #E5D0AB;
+            box-shadow: 0 4px 12px rgba(81, 59, 46, 0.08);
+            transition: 0.3s;
+        }
+
+        .branch-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 18px rgba(81, 59, 46, 0.15);
+        }
+
+        .branch-top {
+            background: linear-gradient(110deg, #513B2E, #A87950);
+            color: #FFF7E8;
+            padding: 22px 15px;
+            text-align: center;
+        }
+
+        .branch-top h2 {
+            font-size: 21px;
+            font-weight: normal;
+            margin-bottom: 8px;
+        }
+
+        .branch-top span {
+            font-size: 12px;
+            background: #E9C98E;
+            color: #513B2E;
+            padding: 5px 13px;
+            border-radius: 20px;
+        }
+
+        .branch-body {
+            padding: 22px;
+        }
+
+        .branch-body p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 13px;
+        }
+
+        .branch-body strong {
+            color: #A87950;
+        }
+
+        /* TOMBOL */
+        .branch-footer {
+            display: flex;
+            gap: 10px;
+            padding: 15px 18px;
+            background: #F5E8D0;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 11px 5px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 7px;
+            font-size: 13px;
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+        }
+
+        .btn-maps {
+            background: #A87950;
+            color: white;
+        }
+
+        .btn-maps:hover {
+            background: #513B2E;
+        }
+
+        .btn-wa {
+            background: #6B8060;
+            color: white;
+        }
+
+        .btn-wa:hover {
+            background: #4F6346;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 35px;
+            text-align: center;
+            padding: 22px;
+            background: #EEDDBD;
+            border-radius: 12px;
+            line-height: 1.8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+            .branch-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .branch-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- JUDUL -->
+    <div class="header">
+        <h1>♡ Our Cookie Stores ♡</h1>
+        <div class="header-line"></div>
+        <p>
+            Temukan Crumbelle Cookies di lokasi terdekatmu.
+            <br>
+            Kami siap menghadirkan cookies lezat untuk setiap momen spesialmu!
+        </p>
+    </div>
+
+    <!-- INFORMASI -->
+    <div class="intro">
+        <h3>Welcome to Crumbelle Cookies!</h3>
+        <p>
+            Kunjungi toko cabang kami dan nikmati berbagai
+            pilihan cookies homemade dengan rasa yang lezat
+            dan kualitas terbaik.
+        </p>
+    </div>
+
+    <!-- DAFTAR CABANG -->
+    <div class="branch-grid">
+
+        <!-- CABANG 1 -->
+        <div class="branch-card">
+
+            <div class="branch-top">
+                <h2>Crumbelle Dago</h2>
+                <span>♡ Cabang Utama</span>
+            </div>
+
+            <div class="branch-body">
+                <p>
+                    <strong>📍 Alamat:</strong><br>
+                    Area Dago, Kota Bandung,
+                    Jawa Barat.
+                </p>
+
+                <p>
+                    <strong>🕒 Jam Operasional:</strong><br>
+                    08.00 - 20.00 WIB
+                </p>
+
+                <p>
+                    <strong>🍪 Layanan:</strong><br>
+                    Penjualan cookies, pemesanan,
+                    dan gift box.
+                </p>
+
+                <p>
+                    <strong>📞 Telepon:</strong><br>
+                    08XX-XXXX-XXXX
+                </p>
+            </div>
+
+            <div class="branch-footer">
+                <a href="https://www.google.com/maps/search/?api=1&query=Dago+Bandung"
+                   target="_blank" class="btn btn-maps">
+                    Google Maps
+                </a>
+
+                <a href="https://wa.me/628XXXXXXXXXX"
+                   target="_blank" class="btn btn-wa">
+                    WhatsApp
+                </a>
+            </div>
+
+        </div>
+
+        <!-- CABANG 2 -->
+        <div class="branch-card">
+
+            <div class="branch-top">
+                <h2>Crumbelle Buah Batu</h2>
+                <span>♡ Cabang</span>
+            </div>
+
+            <div class="branch-body">
+                <p>
+                    <strong>📍 Alamat:</strong><br>
+                    Area Buah Batu, Kota Bandung,
+                    Jawa Barat.
+                </p>
+
+                <p>
+                    <strong>🕒 Jam Operasional:</strong><br>
+                    09.00 - 20.00 WIB
+                </p>
+
+                <p>
+                    <strong>🍪 Layanan:</strong><br>
+                    Penjualan cookies, cookies box,
+                    dan pesanan acara.
+                </p>
+
+                <p>
+                    <strong>📞 Telepon:</strong><br>
+                    08XX-XXXX-XXXX
+                </p>
+            </div>
+
+            <div class="branch-footer">
+                <a href="https://www.google.com/maps/search/?api=1&query=Buah+Batu+Bandung"
+                   target="_blank" class="btn btn-maps">
+                    Google Maps
+                </a>
+
+                <a href="https://wa.me/628XXXXXXXXXX"
+                   target="_blank" class="btn btn-wa">
+                    WhatsApp
+                </a>
+            </div>
+
+        </div>
+
+        <!-- CABANG 3 -->
+        <div class="branch-card">
+
+            <div class="branch-top">
+                <h2>Crumbelle Setiabudi</h2>
+                <span>♡ Cabang</span>
+            </div>
+
+            <div class="branch-body">
+                <p>
+                    <strong>📍 Alamat:</strong><br>
+                    Area Setiabudi, Kota Bandung,
+                    Jawa Barat.
+                </p>
+
+                <p>
+                    <strong>🕒 Jam Operasional:</strong><br>
+                    09.00 - 21.00 WIB
+                </p>
+
+                <p>
+                    <strong>🍪 Layanan:</strong><br>
+                    Penjualan cookies, hampers,
+                    dan pemesanan online.
+                </p>
+
+                <p>
+                    <strong>📞 Telepon:</strong><br>
+                    08XX-XXXX-XXXX
+                </p>
+            </div>
+
+            <div class="branch-footer">
+                <a href="https://www.google.com/maps/search/?api=1&query=Setiabudi+Bandung"
+                   target="_blank" class="btn btn-maps">
+                    Google Maps
+                </a>
+
+                <a href="https://wa.me/628XXXXXXXXXX"
+                   target="_blank" class="btn btn-wa">
+                    WhatsApp
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <h3>♡ Crumbelle Cookies ♡</h3>
+        <p>Freshly Baked, Made with Love.</p>
+        <p>© 2026 Crumbelle Cookies. All Rights Reserved.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
